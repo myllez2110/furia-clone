@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
+  width: 100%;
+  max-width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,9 +14,10 @@ export const HeaderContainer = styled.header`
 `;
 
 export const Nav = styled.nav`
-  max-width: 1400px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  height: 100%;
+  height: 80px;
   padding: 0 2rem;
   display: flex;
   align-items: center;
@@ -22,7 +25,7 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.div`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: #000000;
   font-family: 'Arial Black', sans-serif;
@@ -44,6 +47,9 @@ export const NavLinks = styled.div`
     font-size: 0.75rem;
     letter-spacing: 0.1px;
     transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 
     &:hover {
       opacity: 0.7;
@@ -65,11 +71,6 @@ export const IconsContainer = styled.div`
     &:hover {
       opacity: 0.7;
     }
-  }
-
-  .chevron-right {
-    top: 100px;
-    left: 0;
   }
 
   .cart-count {

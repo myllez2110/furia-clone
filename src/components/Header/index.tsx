@@ -10,8 +10,8 @@ export const Header: React.FC = () => {
     <HeaderContainer>
       <Nav>
         <NavLinks>
-          <Link to="/shop">SHOP ALL <ChevronRight size={14} /></Link>
-          <Link to="/collections">COLLECTIONS <ChevronRight size={14} /></Link>
+          <Link to="/shop">SHOP ALL <ChevronRight className="chevron-right" size={14} /></Link>
+          <Link to="/collections">COLLECTIONS <ChevronRight className="chevron-right" size={14} /></Link>
           <Link to="/outlet">OUTLET </Link>
         </NavLinks>
         
