@@ -1,21 +1,24 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: #FFFFFF;
-  padding: 1rem 2rem;
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 1000;
+  height: 80px;
   border-bottom: 1px solid #E5E5E5;
 `;
 
 export const Nav = styled.nav`
   max-width: 1400px;
   margin: 0 auto;
+  height: 100%;
+  padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const Logo = styled.div`
@@ -57,6 +60,11 @@ export const IconsContainer = styled.div`
     &:hover {
       opacity: 0.7;
     }
+  }
+
+  .chevron-right {
+    top: 100px;
+    left: 0;
   }
 
   .cart-count {

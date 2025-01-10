@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Heart, User, ShoppingBag } from 'lucide-react';
+import { Search, Heart, User, ShoppingBag, ChevronRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { HeaderContainer, Nav, Logo, NavLinks, IconsContainer } from './styles';
 
@@ -10,9 +10,9 @@ export const Header: React.FC = () => {
     <HeaderContainer>
       <Nav>
         <NavLinks>
-          <Link to="/shop">SHOP ALL</Link>
-          <Link to="/collections">COLLECTIONS</Link>
-          <Link to="/outlet">OUTLET</Link>
+          <Link to="/shop">SHOP ALL <ChevronRight size={14} /></Link>
+          <Link to="/collections">COLLECTIONS <ChevronRight size={14} /></Link>
+          <Link to="/outlet">OUTLET </Link>
         </NavLinks>
         
         <Link to="/">

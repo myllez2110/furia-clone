@@ -1,10 +1,9 @@
 import React from 'react';
-import { PageContainer, PageTitle, ProfileSection, ProfileForm } from '../styles';
+import { PageContainer , ProfileSection, ProfileForm } from '../styles';
 
 export const Profile: React.FC = () => {
   return (
     <PageContainer>
-      <PageTitle>MY ACCOUNT</PageTitle>
       <ProfileSection>
         <ProfileForm>
           <div>

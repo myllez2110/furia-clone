@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PageContainer = styled.div`
   max-width: 1400px;
   margin: 0 auto;
-  padding: 6rem 2rem 2rem;
+  padding: 80px 2rem 2rem;
 
   .header {
     display: flex;
@@ -281,6 +281,24 @@ export const CartItem = styled.div`
       align-items: center;
       justify-content: center;
     }
+  }
+`;
+
+export const ImageContainer = styled.div`
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 `;
 

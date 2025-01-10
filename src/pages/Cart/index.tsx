@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageContainer, PageTitle, CartSection, CartItem, CartSummary } from '../styles';
+import { PageContainer, CartSection, CartItem, CartSummary } from '../styles';
 
 export const Cart: React.FC = () => {
   const cartItems = [
@@ -16,7 +16,6 @@ export const Cart: React.FC = () => {
 
   return (
     <PageContainer>
-      <PageTitle>SHOPPING CART</PageTitle>
       <CartSection>
         <div>
           {cartItems.map((item) => (

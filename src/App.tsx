@@ -8,6 +8,7 @@ import { Outlet } from './pages/Outlet';
 import { Profile } from './pages/Profile';
 import { Favorites } from './pages/Favorites';
 import { Cart } from './pages/Cart';
+import { Home } from './pages/Home';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <GlobalStyles />
       <Header />
       <Routes>
-        <Route path="/" element={<ShopAll />} />
+        <Route path="/" element={<Home />} />
         <Route path="/shop" element={<ShopAll />} />
         <Route path="/collections" element={<Collections />} />
         <Route path="/outlet" element={<Outlet />} />
