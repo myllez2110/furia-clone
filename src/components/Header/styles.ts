@@ -27,6 +27,10 @@ export const Logo = styled.div`
   color: #000000;
   font-family: 'Arial Black', sans-serif;
   letter-spacing: -1px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const NavLinks = styled.div`
@@ -36,9 +40,9 @@ export const NavLinks = styled.div`
 
   a {
     color: #000000;
-    font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.1px;
     transition: opacity 0.2s;
 
     &:hover {
@@ -49,8 +53,9 @@ export const NavLinks = styled.div`
 
 export const IconsContainer = styled.div`
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
+  margin-right: 0;
 
   button {
     color: #000000;
@@ -81,4 +86,8 @@ export const IconsContainer = styled.div`
     align-items: center;
     justify-content: center;
   }
-`;
+`
+
+
+
+;
