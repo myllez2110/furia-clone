@@ -18,7 +18,7 @@ export const Nav = styled.nav`
   max-width: 100%;
   margin: 0 auto;
   height: 80px;
-  padding: 0 2rem;
+  padding: 0 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,22 +38,18 @@ export const Logo = styled.div`
 
 export const NavLinks = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 
   a {
     color: #000000;
-    font-weight: 400;
-    font-size: 0.75rem;
-    letter-spacing: 0.1px;
+    font-weight: 450;
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
     transition: opacity 0.2s;
     display: flex;
     align-items: center;
     gap: 4px;
-
-    &:hover {
-      opacity: 0.7;
-    }
   }
 `;
 

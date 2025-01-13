@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
         
         <Link to="/">
           <Logo>
-            FVRIA
+            <img src="https://furiagg.fbitsstatic.net/sf/img/logo-furia.svg?theme=main&v=202412190928" alt="Furia" />
           </Logo>
         </Link>
 
