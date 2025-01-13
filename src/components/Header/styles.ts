@@ -25,11 +25,6 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.div`
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: #000000;
-  font-family: 'Arial Black', sans-serif;
-  letter-spacing: -1px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -50,6 +45,7 @@ export const NavLinks = styled.div`
     display: flex;
     align-items: center;
     gap: 4px;
+
   }
 `;
 
