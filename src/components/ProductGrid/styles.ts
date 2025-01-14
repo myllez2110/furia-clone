@@ -1,9 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ProductsContainer = styled.section`
   max-width: 1400px;
-  margin: 6rem auto 2rem;
-  padding: 0 2rem;
+  margin: 0 auto;
 `;
 
 export const ProductGrid = styled.div`
@@ -12,15 +11,39 @@ export const ProductGrid = styled.div`
   gap: 2rem;
 `;
 
-export const ProductCard = styled.div`
-  position: relative;
-  background: #FFFFFF;
-  cursor: pointer;
-  transition: transform 0.2s;
+export const ProductList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
 
-  &:hover {
-    transform: translateY(-5px);
+export const ProductImage = styled.div`
+  aspect-ratio: 1;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
   }
+`;
+
+export const ProductInfo = styled.div`
+  padding: 1rem;
+  
+  h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0.5rem;
+  }
+`;
+
+export const Price = styled.span`
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000000;
 `;
 
 export const WishlistButton = styled.button`
@@ -42,35 +65,33 @@ export const WishlistButton = styled.button`
   }
 `;
 
-export const ProductImage = styled.div`
-  aspect-ratio: 1;
-  overflow: hidden;
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
+export const ProductCard = styled.div<{ $viewMode?: 'grid' | 'list' }>`
+  position: relative;
+  background: #FFFFFF;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  ${props => props.$viewMode === 'list' && css`
+    display: flex;
+    gap: 2rem;
+
+    ${ProductImage} {
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    ${ProductInfo} {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  `}
+
+  &:hover {
+    transform: translateY(-5px);
   }
 
-  &:hover img {
+  &:hover ${ProductImage} img {
     transform: scale(1.05);
   }
-`;
-
-export const ProductInfo = styled.div`
-  padding: 1rem;
-  
-  h3 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #000000;
-    margin-bottom: 0.5rem;
-  }
-`;
-
-export const Price = styled.span`
-  font-size: 1rem;
-  font-weight: 700;
-  color: #000000;
 `;

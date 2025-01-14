@@ -1,8 +1,10 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { 
   ProductsContainer, 
-  ProductGrid, 
+  ProductGrid as Grid, 
+  ProductList,
   ProductCard, 
   ProductImage, 
   ProductInfo,
@@ -10,40 +12,65 @@ import {
   Price 
 } from './styles';
 
-export const Products: React.FC = () => {
+interface ProductsProps {
+  viewMode?: 'grid' | 'list';
+}
+
+export const Products: React.FC<ProductsProps> = ({ viewMode = 'grid' }) => {
+  const navigate = useNavigate();
+  
   const products = [
     {
       id: 1,
-      name: 'JAQUETA FURIA X ZOR VERDE MILITAR',
-      price: 399.00,
-      image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: 'BONE 9FORTY TRUCKER FURIA X NEW ERA BRANCO',
+      price: 209.90,
+      image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea',
+      slug: 'bone-9forty-trucker-furia-x-new-era-branco'
     },
     {
       id: 2,
-      name: 'JAQUETA FURIA X ZOR PRETA',
-      price: 399.00,
-      image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: 'BONE 9TWENTY FURIA X NEW ERA BRANCO E PRETO',
+      price: 199.90,
+      image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5',
+      slug: 'bone-9twenty-furia-x-new-era-branco-e-preto'
     },
     {
       id: 3,
-      name: 'CAMISETA OVERSIZED FURIA X ZOR WOODHORSE',
-      price: 149.00,
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: 'BONE 9TWENTY FURIA X NEW ERA PRETO E BRANCO',
+      price: 199.90,
+      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab',
+      slug: 'bone-9twenty-furia-x-new-era-preto-e-branco'
     },
     {
       id: 4,
-      name: 'CAMISETA OVERSIZED FURIA X ZOR VERDE',
-      price: 179.00,
-      image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+      name: 'BONE FURIA FURIOSA PRETO',
+      price: 119.00,
+      image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d',
+      slug: 'bone-furia-furiosa-preto'
     }
   ];
 
+  const ProductContainer = viewMode === 'grid' ? Grid : ProductList;
+
+  const handleWishlist = (e: React.MouseEvent, productId: number) => {
+    e.stopPropagation();
+    // Handle wishlist logic here
+  };
+
+  const handleProductClick = (slug: string) => {
+    navigate(`/product/${slug}`);
+  };
+
   return (
     <ProductsContainer>
-      <ProductGrid>
+      <ProductContainer>
         {products.map((product) => (
-          <ProductCard key={product.id}>
-            <WishlistButton>
+          <ProductCard 
+            key={product.id} 
+            $viewMode={viewMode}
+            onClick={() => handleProductClick(product.slug)}
+          >
+            <WishlistButton onClick={(e) => handleWishlist(e, product.id)}>
               <Heart size={20} />
             </WishlistButton>
             <ProductImage>
@@ -55,7 +82,7 @@ export const Products: React.FC = () => {
             </ProductInfo>
           </ProductCard>
         ))}
-      </ProductGrid>
+      </ProductContainer>
     </ProductsContainer>
   );
 };
