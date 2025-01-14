@@ -7,6 +7,8 @@ This is a personal project where I cloned the Furia.gg website for study purpose
 
 The project is not ready yet and has a lot of stuff to do:
 
+-gotta fix the home page, it isnt looking alike anymore
+
 -fully responsive
 
 -acessibility
