@@ -18,6 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/furia-clone" element={<Home />} />
         <Route path="/shop" element={<ShopAll />} />
         <Route path="/collections" element={<Collections />} />
         <Route path="/collections/:collectionName" element={<Collection />} />
