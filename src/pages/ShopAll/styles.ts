@@ -4,12 +4,13 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
-
+  height: 12vh;
+  background-color: white;
   h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 400;
     text-transform: uppercase;
+    margin-left: 1rem;
   }
 
   .right-section {
@@ -20,9 +21,11 @@ export const Header = styled.div`
 `;
 
 export const Breadcrumb = styled.div`
+  padding: 0 1rem;
+  height: 50px;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
-  margin-bottom: 2rem;
   font-size: 0.75rem;
   color: #666;
   text-transform: uppercase;
@@ -41,6 +44,8 @@ export const ViewOptions = styled.div`
   gap: 0.5rem;
   font-size: 0.75rem;
   text-transform: uppercase;
+  margin-left: auto;
+  height: 100%;
 
   span {
     color: #666;
@@ -77,7 +82,7 @@ export const FilterButton = styled.button`
   padding: 0.5rem 1rem;
   border: 1px solid #ddd;
   transition: border-color 0.2s;
-
+  margin-right: 1rem;
   &:hover {
     border-color: #999;
   }
