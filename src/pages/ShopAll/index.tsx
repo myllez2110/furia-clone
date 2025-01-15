@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 import { Products } from '../../components/ProductGrid';
 import { PageContainer } from '../styles';
 import { 
@@ -57,9 +57,7 @@ export const ShopAll: React.FC = () => {
         <div className="right-section">
           <FilterButton onClick={toggleFilter}>
             FILTROS
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 4h16v2.67l-5.33 5.33v7.33L10 22v-10L4.67 6.67V4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+              <ArrowRight size={16} />
           </FilterButton>
           
         </div>
