@@ -245,10 +245,13 @@ Error generating stack: `+o.message+`
 `,Zg=T.section`
   max-width: 1400px;
   margin: 0 auto;
+  background-color: white;
 `,Jg=T.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 `,qg=T.div`
   display: flex;
   flex-direction: column;
@@ -547,7 +550,8 @@ Error generating stack: `+o.message+`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  padding-bottom: 10vh;
+  background-color: white;
   img {
     width: 100%;
     height: 100%;
