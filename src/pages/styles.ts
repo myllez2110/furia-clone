@@ -243,7 +243,8 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  padding-bottom: 10vh;
+  background-color: white;
   img {
     width: 100%;
     height: 100%;

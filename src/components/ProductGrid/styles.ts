@@ -3,12 +3,15 @@ import styled, { css } from 'styled-components';
 export const ProductsContainer = styled.section`
   max-width: 1400px;
   margin: 0 auto;
+  background-color: white;
 `;
 
 export const ProductGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 `;
 
 export const ProductList = styled.div`
