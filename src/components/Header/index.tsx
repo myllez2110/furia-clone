@@ -12,7 +12,7 @@ import {
   CollectionCard,
   MobileMenuButton
 } from './styles';
-
+import { MobileMenu } from '../MobileMenu';
 export const Header: React.FC = () => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -59,6 +59,11 @@ export const Header: React.FC = () => {
             <Search size={20} />
           </button>
         </MobileMenuButton>
+
+        <MobileMenu 
+          isOpen={isMobileMenuOpen} 
+          onClose={() => setIsMobileMenuOpen(false)} 
+        />
 
         <NavLinks>
           <NavItem>
