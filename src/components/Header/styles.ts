@@ -10,6 +10,10 @@ export const HeaderContainer = styled.header`
   background: white;
   z-index: 1000;
   height: 80px;
+
+  @media (max-width: 768px) {
+    height: 70px;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -21,6 +25,13 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+
+  @media (max-width: 768px) {
+    height: 70px;
+    padding: 0 1rem;
+    justify-content: space-between;
+  }
 `;
 
 export const Logo = styled.div`
@@ -28,6 +39,16 @@ export const Logo = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  img {
+    height: 30px;
+    width: auto;
+  }
+
+  @media (max-width: 768px) {
+    position: static;
+    transform: none;
+  }
 `;
 
 export const NavLinks = styled.div`
@@ -44,6 +65,10 @@ export const NavLinks = styled.div`
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -63,6 +88,18 @@ export const IconsContainer = styled.div`
     }
   }
 
+    .search-button {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .wishlist-button {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
   .cart-count {
     position: absolute;
     top: -8px;
@@ -76,6 +113,38 @@ export const IconsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    gap: 0.75rem;
+
+    button {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+`;
+
+export const MobileMenuButton = styled.button`
+  display: none;
+  color: #000000;
+  align-items: center;
+  gap: 0.75rem;
+  
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  .search-button-mobile {
+    color: #000000;
+    display: none;
+    
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+    }
   }
 `;
 
@@ -92,11 +161,22 @@ export const DropdownMenu = styled.div`
   z-index: 1000;
 
   .dropdown-content {
-    padding: 0 2rem 1%;
+    padding: 2rem;
     max-width: 1400px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1;
+    gap: 1rem;
+  }
+
+  @media (max-width: 1200px) {
+    .dropdown-content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -112,6 +192,10 @@ export const NavItem = styled.div`
     visibility: visible;
     transform: translateY(0);
   }
+
+  @media (max-width: 768px) {
+    height: 70px;
+  }
 `;
 
 export const CollectionCard = styled.div`
@@ -125,5 +209,6 @@ export const CollectionCard = styled.div`
     font-size: 0.8rem;
     font-weight: 500;
     text-align: left;
+    margin-top: 0.5rem;
   }
 `;

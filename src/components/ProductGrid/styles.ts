@@ -4,14 +4,17 @@ export const ProductsContainer = styled.section`
   max-width: 1400px;
   margin: 0 auto;
   background-color: white;
+  padding: 1rem;
 `;
 
 export const ProductGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 0.75rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const ProductList = styled.div`
@@ -40,6 +43,10 @@ export const ProductInfo = styled.div`
     font-weight: 600;
     color: #000000;
     margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+    }
   }
 `;
 
@@ -47,6 +54,10 @@ export const Price = styled.span`
   font-size: 1rem;
   font-weight: 700;
   color: #000000;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+  }
 `;
 
 export const WishlistButton = styled.button`
@@ -66,6 +77,18 @@ export const WishlistButton = styled.button`
   &:hover {
     color: #FF0000;
   }
+
+  @media (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
 `;
 
 export const ProductCard = styled.div<{ $viewMode?: 'grid' | 'list' }>`
@@ -81,12 +104,25 @@ export const ProductCard = styled.div<{ $viewMode?: 'grid' | 'list' }>`
     ${ProductImage} {
       width: 200px;
       flex-shrink: 0;
+
+      @media (max-width: 768px) {
+        width: 120px;
+      }
     }
 
     ${ProductInfo} {
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      gap: 1rem;
+
+      ${ProductImage} {
+        width: 100%;
+      }
     }
   `}
 

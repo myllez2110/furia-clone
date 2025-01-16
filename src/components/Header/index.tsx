@@ -1,5 +1,5 @@
-import React from 'react';
-import { Search, Heart, User, ShoppingBag, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, Heart, User, ShoppingBag, ChevronRight, Menu } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   HeaderContainer, 
@@ -9,11 +9,13 @@ import {
   IconsContainer,
   NavItem,
   DropdownMenu,
-  CollectionCard
+  CollectionCard,
+  MobileMenuButton
 } from './styles';
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const collections = [
     {
@@ -51,6 +53,13 @@ export const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <Nav>
+        <MobileMenuButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <Menu size={24} />
+          <button className="search-button-mobile" aria-label="Search">
+            <Search size={20} />
+          </button>
+        </MobileMenuButton>
+
         <NavLinks>
           <NavItem>
             <Link to="/shop">SHOP ALL <ChevronRight className="chevron-right" size={14} /></Link>
@@ -82,10 +91,10 @@ export const Header: React.FC = () => {
         </Link>
 
         <IconsContainer>
-          <button aria-label="Search">
+          <button className="search-button" aria-label="Search">
             <Search size={20} />
           </button>
-          <button aria-label="Wishlist" onClick={() => navigate('/favorites')}>
+          <button className="wishlist-button" aria-label="Wishlist" onClick={() => navigate('/favorites')}>
             <Heart size={20} />
           </button>
           <button aria-label="Account" onClick={() => navigate('/profile')}>

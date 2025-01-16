@@ -41,6 +41,12 @@ export const CollectionItem = styled.div`
     text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 2;
+    padding: 0 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+      bottom: 1.5rem;
+    }
   }
 
   &::after {
